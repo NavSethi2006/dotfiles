@@ -1,0 +1,34 @@
+background            #000000
+foreground            #cbbbff
+cursor                #5c2bff
+selection_background  #bcbcbc
+color0                #1f1c27
+color8                #353146
+color1                #d8393d
+color9                #d8393d
+color2                #2dcc72
+color10               #2dcc72
+color3                #d8b76e
+color11               #d8b76e
+color4                #ffc183
+color12               #ffc183
+color5                #dd8d40
+color13               #dd8d40
+color6                #2388ff
+color14               #2388ff
+color7                #FFFFFF
+color15               #FFFFFF
+selection_foreground  #bcbcbc
+background_opacity 0.7
+font_size 20
+# font_family      JetBrains Mono
+# bold_font        JetBrains Mono Extra Bold
+# bold_italic_font JetBrains Mono Extra Bold Italic
+
+
+# BEGIN_KITTY_FONTS
+font_family      family='JetBrains Mono' postscript_name=JetBrainsMono-Regular
+bold_font        family='JetBrains Mono' variable_name=JetBrainsMono style=ExtraBold
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
