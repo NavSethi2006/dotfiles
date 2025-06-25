@@ -1,0 +1,93 @@
+{
+    "layer": "top",
+    "position": "top", // Waybar at the bottom of your screen
+    "height": 15, // Waybar height
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["custom/os_button", "cpu", "memory","disk","temperature" ],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": ["tray","custom/spotify","bluetooth","network","pulseaudio", "clock"],
+    
+"custom/spotify": {
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/spotify_status.sh",
+    "interval": 5,
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+  },
+
+"bluetooth": {
+	"format": "  {status}",
+    "interval": 30,
+    "on-click": "blueman-manager",
+},
+
+"cpu": {
+        "interval": 5,
+        "format": "CPU: {usage}%", // Icon: microchip
+        "states": {
+          "warning": 70,
+          "critical": 90
+        }
+    },
+  "disk": {
+    "interval": 2,
+    "format": "DISK :{percentage_used}% ",
+    "path": "/",
+  },
+
+"memory": {
+        "interval": 5,
+        "format": "MEM: {}% ", // Icon: memory
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "temperature": {
+      "critical-threshold": 80,
+      "interval": 5,
+      "format": " {icon} {temperatureC}°C",
+      "format-icons": [
+          "", // Icon: temperature-empty
+          "", // Icon: temperature-quarter
+          "", // Icon: temperature-half
+          "", // Icon: temperature-three-quarters
+          ""  // Icon: temperature-full
+      ],
+      "tooltip": true
+    },
+
+    "tray": {
+        // "icon-size": 20,
+        "spacing": 10
+    },
+    "clock": {
+	"format": "{:%a, %d, %b  %H:%M}"
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "  Connected   ",
+        "format-disconnected": "  Disconnected ⚠   "
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}  ",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/os_button": {
+        "format": "󰣇",
+	"icon-size": 30,
+        "on-click": "wofi --show drun",
+        "tooltip": false
+	}
+}
