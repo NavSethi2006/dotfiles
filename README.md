@@ -5,6 +5,7 @@ My first attempt at a wayland rice. It uses hyperland, waybar, wofi and some oth
 # How To Install
 
 ```
+git clone https://github.com/NavSethi2006/dotfiles
 cd dotfiles
 chmod 777 install.sh
 sh install.sh
